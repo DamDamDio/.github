@@ -1,0 +1,12 @@
+# Tier 3 of the merge tiers (DamDamDio/admin-platform#169, AGENTS.md workflow 8 there): security and rules, which
+# only the owner approves and merges. With the organization ruleset `owner-paths` ("Require review from Code Owners"),
+# GitHub refuses to merge a pull request that changes a file listed here until @drossello approves its latest diff.
+#
+# This repository is public, and GitHub serves its default files to every repository of the organization. So every
+# file is the owner's, a new one included (a SECURITY.md, a pull request template, or profile/README.md, which would
+# show on the organization's public page), with one exception below. This file is the owner's through this line.
+* @drossello
+
+# The issue forms are the backlog's vocabulary: tier 2, which two damiano-proxy agents approve before an agent merges.
+# No owner on this line, so GitHub asks for no code-owner review here; the proxies' approval is text, not a wall.
+/.github/ISSUE_TEMPLATE/
