@@ -1,0 +1,45 @@
+name: Finding
+description: Something found wrong or risky, with its evidence.
+labels: ['kind:finding']
+projects: ['DamDamDio/1']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        A finding states what is wrong and proves it. Evidence is text or a file in git, never only a screenshot:
+        attachments are not exported (admin-platform's ADR 0020). Never put a secret in an issue, not even to show that it leaked:
+        say where it is and what kind it is.
+  - type: textarea
+    id: what
+    attributes:
+      label: What is wrong
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: A file and line, a command and its output, a link to documentation.
+    validations:
+      required: true
+  - type: dropdown
+    id: impact
+    attributes:
+      label: Impact
+      options:
+        - Security
+        - Data loss
+        - Outage
+        - Wrong information shown or documented
+        - Hygiene
+    validations:
+      required: true
+  - type: textarea
+    id: fix
+    attributes:
+      label: Suggested fix
+  - type: input
+    id: found-during
+    attributes:
+      label: Found during
+      description: The work, review or pull request that found it.

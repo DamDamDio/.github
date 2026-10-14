@@ -1,0 +1,3 @@
+# Issues are opened through the forms only (admin-platform's ADR 0020): each form gives an issue the shape
+# the backlog project needs. gh and the API can still open any issue; agents use a body file of the same shape.
+blank_issues_enabled: false

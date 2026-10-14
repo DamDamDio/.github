@@ -1,0 +1,46 @@
+name: Decision
+description: A choice for the owner. A decision that changes a rule lands in git; this issue links to it.
+labels: ['kind:decision']
+projects: ['DamDamDio/1']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The issue holds the question and its discussion. The decision itself, when it changes the spec, an ADR, a
+        contract, a domain concept, AGENTS.md or a security trade-off, lands in git, and the issue links to that
+        commit (admin-platform's ADR 0020). An owner proxy's decision is a comment with the proxy's table, and the label
+        `proxy-decided` until the owner confirms.
+  - type: textarea
+    id: question
+    attributes:
+      label: Question
+      description: What must be decided, and what forces it now.
+    validations:
+      required: true
+  - type: textarea
+    id: options
+    attributes:
+      label: Options
+      description: Each option with its trade-off and its sources (documentation, a file and line, a measurement).
+    validations:
+      required: true
+  - type: textarea
+    id: recommendation
+    attributes:
+      label: Recommendation
+      description: Which option, and why.
+  - type: dropdown
+    id: lands-in
+    attributes:
+      label: Where the decision lands
+      options:
+        - An ADR
+        - A spec section
+        - AGENTS.md
+        - Configuration in a pull request
+        - Nowhere else; the issue is enough
+  - type: textarea
+    id: blocks
+    attributes:
+      label: What waits for it
+      description: Issues, milestones or dates.
