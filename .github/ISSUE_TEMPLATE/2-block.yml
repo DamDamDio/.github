@@ -1,0 +1,44 @@
+name: Block
+description: A group of work, whose pieces are sub-issues in any of the three repositories.
+title: 'Block: '
+labels: ['kind:block']
+projects: ['DamDamDio/1']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        A block is a parent issue. Each piece is a sub-issue, one pull request's worth; dependencies are GitHub's
+        blocked-by links. Never put a secret in an issue: issues are exported to git (admin-platform's ADR 0020).
+  - type: textarea
+    id: goal
+    attributes:
+      label: Goal
+      description: What the block achieves, and why now.
+    validations:
+      required: true
+  - type: textarea
+    id: pieces
+    attributes:
+      label: Pieces
+      description: The sub-issues it will hold, in order, each with its repository.
+    validations:
+      required: true
+  - type: textarea
+    id: needs
+    attributes:
+      label: Needs first
+      description: Milestones, decisions or other issues it waits for.
+  - type: textarea
+    id: risks
+    attributes:
+      label: Risks
+  - type: textarea
+    id: estimate
+    attributes:
+      label: Estimate
+      description: Agent hours and owner minutes for the whole block, until its sub-issues carry their own.
+  - type: textarea
+    id: links
+    attributes:
+      label: Links
+      description: Spec sections, ADRs, reports, issues (owner/repository#N).

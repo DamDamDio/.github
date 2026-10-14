@@ -1,0 +1,55 @@
+name: Task
+description: Work that ends in one pull request.
+labels: ['kind:task']
+projects: ['DamDamDio/1']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        One pull request's worth of work. Triage sets the project's fields (Status, Phase, Priority, the estimates).
+        Never put a secret in an issue: issues are exported to git (admin-platform's ADR 0020).
+  - type: textarea
+    id: goal
+    attributes:
+      label: Goal
+      description: What is true once this is done, and why it matters.
+    validations:
+      required: true
+  - type: textarea
+    id: where
+    attributes:
+      label: Where
+      description: The files, folders or services it touches.
+  - type: textarea
+    id: done
+    attributes:
+      label: Done when
+      description: How a reviewer checks it, for example the gate's output, a command and its answer, a page.
+    validations:
+      required: true
+  - type: textarea
+    id: links
+    attributes:
+      label: Links
+      description: Spec sections, ADRs, pull requests and issues (owner/repository#N).
+  - type: input
+    id: agent-hours
+    attributes:
+      label: Agent hours
+      description: Agent time to done, two review rounds included; a range as its upper bound.
+  - type: input
+    id: owner-minutes
+    attributes:
+      label: Owner minutes
+      description: The owner's attention it needs.
+  - type: dropdown
+    id: presence
+    attributes:
+      label: Owner presence
+      description: >-
+        What the owner must give while it runs. "none needed": it runs while the owner is away, and triage sets
+        the project field to "none". GitHub's own "None" means not answered yet.
+      options:
+        - none needed
+        - phone
+        - hands-on
