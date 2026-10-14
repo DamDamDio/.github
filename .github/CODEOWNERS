@@ -1,12 +1,16 @@
-# Tier 3 of the merge tiers (DamDamDio/admin-platform#169, AGENTS.md workflow 8 there): security and rules, which
-# only the owner approves and merges. With the organization ruleset `owner-paths` ("Require review from Code Owners"),
-# GitHub refuses to merge a pull request that changes a file listed here until @drossello approves its latest diff.
+# Tier 3 of the merge tiers (DamDamDio/admin-platform#169): security and rules, which only the owner approves and
+# merges. With the organization ruleset `owner-paths` ("Require review from Code Owners"), GitHub refuses to merge a
+# pull request that changes a file listed here until @drossello approves its latest diff.
 #
-# This repository is public, and GitHub serves its default files to every repository of the organization. So every
-# file is the owner's, a new one included (a SECURITY.md, a pull request template, or profile/README.md, which would
-# show on the organization's public page), with one exception below. This file is the owner's through this line.
+# This repository is public, and GitHub serves its default files to every repository of the organization that has no
+# file of that type of its own. So every file is the owner's, a new one included (a SECURITY.md, a pull request
+# template, or profile/README.md, which shows on the organization's public page).
+#
+# The issue forms too, although #169 puts the backlog's vocabulary in tier 2: a merge here publishes them, which the
+# proxies may not decide ("making anything public" is one of their hard limits), and in this repository no machine
+# check reads the proxies' approval. To make the forms tier 2, add a last line `/.github/ISSUE_TEMPLATE/` with no
+# owner: the last matching line wins, and a line with no owner leaves its files without a code owner.
 * @drossello
 
-# The issue forms are the backlog's vocabulary: tier 2, which two damiano-proxy agents approve before an agent merges.
-# No owner on this line, so GitHub asks for no code-owner review here; the proxies' approval is text, not a wall.
-/.github/ISSUE_TEMPLATE/
+# This file, by name and last, so that no later line can take its owner away.
+/.github/CODEOWNERS @drossello
