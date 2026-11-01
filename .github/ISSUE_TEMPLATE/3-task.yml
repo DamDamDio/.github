@@ -13,9 +13,9 @@ body:
     id: story
     attributes:
       label: Story
-      description: "owner/repository#N of its story; a Renovate update or a documentation-only change needs no ticket at all."
+      description: "owner/repository#N of its story. Leave it empty only for an idea, which triage labels kind:idea; a Renovate update or a documentation-only change needs no ticket at all."
     validations:
-      required: true
+      required: false
   - type: textarea
     id: goal
     attributes:
