@@ -1,13 +1,21 @@
-name: Task
-description: Work that ends in one pull request.
+name: Technical ticket
+description: One repository's part of one story; its pull requests close it.
 labels: ['kind:task']
 projects: ['DamDamDio/1']
 body:
   - type: markdown
     attributes:
       value: |
-        One pull request's worth of work. Triage sets the project's fields (Status, Phase, Priority, the estimates).
-        Never put a secret in an issue: issues are exported to git (admin-platform's ADR 0020).
+        One repository's part of one story: a story holds at most one per repository it touches, and each pull
+        request links to one technical ticket. Triage sets the project's fields (Status, Phase, Priority, the
+        estimates). Never put a secret in an issue: issues are exported to git (admin-platform's ADR 0020).
+  - type: input
+    id: story
+    attributes:
+      label: Story
+      description: "owner/repository#N of its story; a Renovate update or a documentation-only change needs no ticket at all."
+    validations:
+      required: true
   - type: textarea
     id: goal
     attributes:
