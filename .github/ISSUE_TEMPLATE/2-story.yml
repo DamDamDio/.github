@@ -1,0 +1,40 @@
+name: Story
+description: One responsibility, a piece of one epic or a small feature on its own; its sub-issues are its technical tickets.
+labels: ['kind:story']
+projects: ['DamDamDio/1']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        A story is a sub-issue of its epic, or stands alone when it is a small feature that needs no epic. Its
+        technical tickets are its sub-issues, at most one per repository it touches.
+        Never put a secret in an issue: issues are exported to git (admin-platform's ADR 0020).
+  - type: textarea
+    id: goal
+    attributes:
+      label: Goal
+      description: One responsibility.
+    validations:
+      required: true
+  - type: input
+    id: epic
+    attributes:
+      label: Epic
+      description: "owner/repository#N of its epic. Leave it empty for a small feature that needs no epic."
+    validations:
+      required: false
+  - type: textarea
+    id: tickets
+    attributes:
+      label: Technical tickets
+      description: At most one technical ticket per repository.
+  - type: textarea
+    id: needs
+    attributes:
+      label: Needs first
+      description: Milestones, decisions or other issues it waits for.
+  - type: textarea
+    id: links
+    attributes:
+      label: Links
+      description: Spec sections, ADRs, reports, issues (owner/repository#N).

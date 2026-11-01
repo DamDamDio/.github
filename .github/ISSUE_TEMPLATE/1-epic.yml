@@ -1,0 +1,48 @@
+name: Epic
+description: A project with one objective that ends when its acceptance criteria hold; never a theme.
+title: 'Epic: '
+labels: ['kind:epic']
+projects: ['DamDamDio/1']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        An epic is a parent issue. Its stories are its sub-issues, in any of the backlog's repositories; dependencies
+        are GitHub's blocked-by links. Its effort is the sum of its stories' estimates, and no date is planned.
+        Never put a secret in an issue: issues are exported to git (admin-platform's ADR 0020).
+  - type: textarea
+    id: objective
+    attributes:
+      label: Objective
+      description: "One objective: a project that ends. 'Account opening for companies', never a theme such as 'account opening'."
+    validations:
+      required: true
+  - type: input
+    id: summary
+    attributes:
+      label: Summary
+      description: One line for the project view.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: What must hold for the epic to close.
+    validations:
+      required: true
+  - type: textarea
+    id: stories
+    attributes:
+      label: Stories
+      description: The stories it will hold, each with its repository (owner/repository#N once filed).
+  - type: textarea
+    id: needs
+    attributes:
+      label: Needs first
+      description: Milestones, decisions or other issues it waits for.
+  - type: textarea
+    id: links
+    attributes:
+      label: Links
+      description: Spec sections, ADRs, reports, issues (owner/repository#N).
