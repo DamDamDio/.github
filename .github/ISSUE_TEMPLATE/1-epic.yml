@@ -8,7 +8,7 @@ body:
     attributes:
       value: |
         An epic is a parent issue. Its stories are its sub-issues, in any of the backlog's repositories; dependencies
-        are GitHub's blocked-by links. Its effort is the sum of its stories' estimates, and no date is planned.
+        are GitHub's blocked-by links. Its effort is its stories' estimates, and no date is planned.
         Never put a secret in an issue: issues are exported to git (admin-platform's ADR 0020).
   - type: textarea
     id: objective

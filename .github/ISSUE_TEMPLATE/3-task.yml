@@ -41,11 +41,15 @@ body:
     attributes:
       label: Links
       description: Spec sections, ADRs, pull requests and issues (owner/repository#N).
-  - type: input
-    id: agent-hours
+  - type: dropdown
+    id: effort
     attributes:
-      label: Agent hours
-      description: Agent time to done, two review rounds included; a range as its upper bound.
+      label: Effort
+      description: Agent work to done, two review rounds included, as a relative size; a range as its upper bound.
+      options:
+        - low
+        - medium
+        - high
   - type: input
     id: owner-minutes
     attributes:
